@@ -2,6 +2,9 @@
 repo = 'mattn/emmet-vim'
 
 [[plugins]]
+repo = 'Shougo/neocomplete.vim'
+
+[[plugins]]
 repo = 'scrooloose/nerdtree'
 
 [[plugins]]
