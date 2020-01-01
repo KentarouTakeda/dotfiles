@@ -4,7 +4,7 @@ scriptencoding utf-8
 source ~/.vim/bundles.vim
 
 augroup vimrc
-	autocmd!
+    autocmd!
 augroup END
 
 filetype plugin indent on
@@ -95,59 +95,28 @@ set hidden
 set shortmess+=I
 
 augroup filetypedetect
-	autocmd! BufNewFile,BufRead *.inc		setfiletype php
-	autocmd! BufNewFile,BufRead *.xhtml		setfiletype html
-	autocmd! BufNewFile,BufRead *.sql		setfiletype sql
-	autocmd! BufNewFile,BufRead *.psql		setfiletype sql
-	autocmd! BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} setfiletype markdown
-	autocmd! BufNewFile,BufRead *.ejs set filetype=ejs
+    autocmd! BufNewFile,BufRead *.xhtml setfiletype html
+    autocmd! BufNewFile,BufRead *.sql   setfiletype sql
+    autocmd! BufNewFile,BufRead *.psql  setfiletype sql
+    autocmd! BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} setfiletype markdown
+    autocmd! BufNewFile,BufRead *.ejs set filetype=ejs
 augroup END
 
 augroup fileTypeIndent
-	autocmd!
-	autocmd FileType yaml setlocal tabstop=2 softtabstop=2 shiftwidth=2
+    autocmd!
+    autocmd FileType yaml setlocal tabstop=2 softtabstop=2 shiftwidth=2
 augroup END
-				
+
 if filereadable(expand('~/.vimrc.local'))
-	  source ~/.vimrc.local
+    source ~/.vimrc.local
 endif
 
 augroup vimrc
-	" カーソル位置を保存
-	autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
-
-	" " 保存時にerrormaker.vimでCUIの画面がぶれるので、いったん再描画する
-	" autocmd QuickfixCmdPost make redraw!
-	" " quickfixに対象が存在した場合に自動起動する用に設定
-	" autocmd QuickfixCmdPost make if len(getqflist()) != 0 | copen | endif
-	" " quickfixに対象が存在しなかった場合に自動で閉じるように設定
-	" autocmd QuickfixCmdPost make if len(getqflist()) == 0 | cclose | endif
-	" autocmd FileType php set makeprg=php\ -l\ %
-	" autocmd BufWritePost *.php silent make | if len(getqflist()) != 1 | copen | else | cclose | endif
+    " カーソル位置を保存
+    autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 augroup END
 
 syntax on
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 1
-let g:syntastic_aggregate_errors = 1
-let g:syntastic_enable_signs=1
-let g:syntastic_javascript_checkers=['jshint']
-let g:syntastic_typescript_checkers = ['tsuquyomi'] " You shouldn't use 'tsc' checker.
-let g:syntastic_php_checkers=['php']
-let g:syntastic_mode_map={
-\ 'mode': 'passive',
-\ 'active_filetypes': ['php', 'javascript', 'json','css','typescript'],
-\ 'passive_filetypes': []
-\}
-" エラーが存在する場合はステータスラインに表示
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-set guifont=Ricty\ Regular:h10
 
 let g:acp_enableAtStartup = 0
 let g:neocomplete#enable_at_startup = 1
@@ -171,25 +140,10 @@ inoremap <expr><C-l>     neocomplete#complete_common_string()
 inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
 function! s:my_cr_function()
   return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
-  " For no inserting <CR> key.
-  "return pumvisible() ? "\<C-y>" : "\<CR>"
 endfunction
-" <TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-" <C-h>, <BS>: close popup and delete backword char.
 inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
-" Close popup by <Space>.
-"inoremap <expr><Space> pumvisible() ? "\<C-y>" : "\<Space>"
-
-" AutoComplPop like behavior.
-"let g:neocomplete#enable_auto_select = 1
-
-" Shell like behavior(not recommended).
-"set completeopt+=longest
-"let g:neocomplete#enable_auto_select = 1
-"let g:neocomplete#disable_auto_complete = 1
-"inoremap <expr><TAB>  pumvisible() ? "\<Down>" : "\<C-x>\<C-u>"
 
 " Enable omni completion.
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
@@ -203,27 +157,14 @@ if !exists('g:neocomplete#sources#omni#input_patterns')
   let g:neocomplete#sources#omni#input_patterns = {}
 endif
 
-let g:tsuquyomi_completion_case_sensitive = 1
-let g:tsuquyomi_completion_preview = 1
-let g:tsuquyomi_completion_detail = 1
-
-autocmd FileType typescript setlocal completeopt+=menu,preview,longest
-autocmd FileType typescript nmap <C-h> :echo tsuquyomi#hint()<CR>
-
-let g:tsuquyomi_disable_quickfix = 1
-
 if !exists('g:neocomplete#force_omni_input_patterns')
-	let g:neocomplete#force_omni_input_patterns = {}
+    let g:neocomplete#force_omni_input_patterns = {}
 endif
 let g:neocomplete#force_omni_input_patterns.typescript = '[^. *\t]\.\w*\|\h\w*::'
 let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
 let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
 let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
-
-let g:phpcd_php_cli_executable='/usr/local/bin/php'
-
-let g:syntastic_typescript_tsc_args="--experimentalDecorators --target ES5"
 
 " Plugin key-mappings.
 " Note: It must be "imap" and "smap".  It uses <Plug> mappings.
