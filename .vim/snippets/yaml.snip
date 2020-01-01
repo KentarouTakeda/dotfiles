@@ -1,0 +1,12 @@
+snippet schema_type_object
+    type: "object"
+    properties:
+        ${1}:
+    required:
+        - "${2}"
+    additionalProperties: ${3}
+
+snippet schema_type_array
+    type: "array"
+    items:
+        ${0:TARGET}

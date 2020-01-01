@@ -1,5 +1,8 @@
 #!/bin/sh -x
-cd $HOME
+cd ~
+
+mkdir .vim 2> /dev/null
+let g:neosnippet#snippets_directory='~/.vim/snippets/'
 
 rm .gitconfig
 rm .gitignore_global
@@ -24,3 +27,4 @@ ln -s dotfiles/.vimrc
 ln -s dotfiles/.zprofile
 ln -s dotfiles/.zshrc
 ln -s dotfiles/.dein
+ln -s ../dotfiles/.vim/snippets .vim/snippets
