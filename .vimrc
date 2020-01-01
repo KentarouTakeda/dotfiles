@@ -35,6 +35,14 @@ nnoremap <Leader>7  :b 7<CR>
 nnoremap <Leader>8  :b 8<CR>
 nnoremap <Leader>9  :b 9<CR>
 
+" xで削除した時はヤンクしない
+vnoremap x "_x
+nnoremap x "_x
+
+" visulaモードでインデント調整後に選択範囲を開放しない
+vnoremap > >gv
+vnoremap < <gv
+
 set fileformats=unix,dos,mac
 set backspace=indent,eol,start
 
@@ -65,19 +73,24 @@ set wildmode=longest,full
 set wildmenu
 set cursorline
 set ambiwidth=single
+set nobomb
+set title
+set t_Co=256
+set belloff=all
 set undofile
 set undodir=$HOME/tmp/vim
 set textwidth=0
 set nowrap
 set statusline=%n\:%y%F\ \|%{(&fenc!=''?&fenc:&enc).'\|'.&ff.'\|'}%m%r%=
 set autoindent
+set smartindent
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
-set noexpandtab
+set expandtab
 set termencoding=utf-8
 set fileencoding=utf-8
-set fileencodings=utf-8,euc-jp,cp932,iso-2022-jp
+set fileencodings=utf-8,ucs-boms,euc-jp,cp932,iso-2022-jp
 set directory=$HOME/tmp/vim
 set nofsync
 set ttyfast
