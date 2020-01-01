@@ -1,15 +1,11 @@
 set encoding=utf-8
 scriptencoding utf-8
 
-source ~/.vim/bundles.vim
-
 augroup vimrc
     autocmd!
 augroup END
 
 filetype plugin indent on
-set background=dark
-colorscheme hybrid
 
 let mapleader = "\<Space>"
 nnoremap <Leader>o :CtrlP<CR>
@@ -116,7 +112,6 @@ augroup vimrc
     autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 augroup END
 
-syntax on
 
 let g:acp_enableAtStartup = 0
 let g:neocomplete#enable_at_startup = 1
@@ -231,3 +226,7 @@ if dein#check_install()
 endif
 
 " ------------------------------------------------------------
+
+set background=dark
+syntax on
+colorscheme hybrid
