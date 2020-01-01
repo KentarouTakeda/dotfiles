@@ -1,8 +1,10 @@
 #!/bin/sh -x
 cd ~
 
+curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
+sh ./installer.sh ~/.vim/bundles
+
 mkdir .vim 2> /dev/null
-let g:neosnippet#snippets_directory='~/.vim/snippets/'
 
 rm .gitconfig
 rm .gitignore_global
@@ -15,6 +17,7 @@ rm .vimrc
 rm .zprofile
 rm .zshrc
 rm -rf .dein
+rm .vim/snippets
 
 ln -s dotfiles/.gitconfig
 ln -s dotfiles/.gitignore_global
