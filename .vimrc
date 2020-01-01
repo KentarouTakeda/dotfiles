@@ -195,4 +195,29 @@ set background=dark
 syntax on
 colorscheme hybrid
 
+" ------------------------------------------------------------
 let g:lsp_settings_servers_dir = $HOME . "/tmp/vim-lsp"
+let g:lsp_diagnostics_echo_cursor = 1
+
+augroup LspSetting
+    autocmd!
+    autocmd FileType typescript call s:lsp_setting()
+    autocmd FileType javascript call s:lsp_setting()
+    autocmd FileType php call s:lsp_setting()
+augroup END
+
+function! s:lsp_setting() abort
+  setlocal omnifunc=lsp#complete   " オムニ補完を有効化
+  nnoremap <buffer> <C-]> :<C-u>LspDefinition<CR>
+  nnoremap <buffer> gd :<C-u>LspDefinition<CR>
+  nnoremap <buffer> gD :<C-u>LspReferences<CR>
+  nnoremap <buffer> gs :<C-u>LspDocumentSymbol<CR>
+  nnoremap <buffer> gS :<C-u>LspWorkspaceSymbol<CR>
+  nnoremap <buffer> gQ :<C-u>LspDocumentFormat<CR>
+  vnoremap <buffer> gQ :LspDocumentRangeFormat<CR>
+  nnoremap <buffer> <C-h> :<C-u>LspHover<CR>
+  nnoremap <buffer> <F1> :<C-u>LspImplementation<CR>
+  nnoremap <buffer> gR :<C-u>LspRename<CR>
+  nnoremap <buffer> gL :<C-u>LspDocumentDiagnostics<CR>
+endfunction
+" ------------------------------------------------------------
