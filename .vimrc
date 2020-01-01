@@ -9,10 +9,7 @@ augroup END
 
 filetype plugin indent on
 set background=dark
-
-" if filereadable(expand("$HOME/.vim/bundle/vim-hybrid/colors/hybrid.vim"))
-	colorscheme hybrid
-" endif
+colorscheme hybrid
 
 let mapleader = "\<Space>"
 nnoremap <Leader>o :CtrlP<CR>
@@ -227,8 +224,6 @@ let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 let g:phpcd_php_cli_executable='/usr/local/bin/php'
 
 let g:syntastic_typescript_tsc_args="--experimentalDecorators --target ES5"
-
-
 
 " Plugin key-mappings.
 " Note: It must be "imap" and "smap".  It uses <Plug> mappings.
