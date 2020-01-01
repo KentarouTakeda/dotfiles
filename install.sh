@@ -11,6 +11,7 @@ rm .tmux.conf
 rm .vimrc
 rm .zprofile
 rm .zshrc
+rm -rf .dein
 
 ln -s dotfiles/.gitconfig
 ln -s dotfiles/.gitignore_global
@@ -22,3 +23,4 @@ ln -s dotfiles/.tmux.conf
 ln -s dotfiles/.vimrc
 ln -s dotfiles/.zprofile
 ln -s dotfiles/.zshrc
+ln -s dotfiles/.dein
