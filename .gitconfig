@@ -2,8 +2,6 @@
 	name = 武田 憲太郎
 [core]
 	excludesfile = ~/.gitignore_global
-[commit]
-	template = ~/.stCommitMsg
 [diff]
 	tool = vimdiff
 [difftool]
