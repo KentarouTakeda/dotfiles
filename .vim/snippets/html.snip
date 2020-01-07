@@ -14,9 +14,18 @@ snippet mat_input
         <mat-hint>${3}</mat-hint>
     </mat-form-field>
 
+snippet mat_textarea
+    <mat-form-field>
+        <textarea matInput mat-autosize cdkAutosizeMinRows="${1}" cdkAutosizeMaxRows="${2}" formControlName="${3}" placeholder="${4}" required></textarea>
+        <mat-hint>${5}</mat-hint>
+    </mat-form-field>
+
 snippet mat_radio
     <mat-radio-group formControlName="${1}" required>
         <mat-radio-button [value]="${2}">
             ${3}
         </mat-radio-button>
     </mat-radio-group>
+
+snippet mat_check
+    <mat-checkbox>${0:TARGET}</mat-checkbox>
