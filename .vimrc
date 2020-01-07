@@ -28,10 +28,6 @@ nnoremap <Leader>7  :b 7<CR>
 nnoremap <Leader>8  :b 8<CR>
 nnoremap <Leader>9  :b 9<CR>
 
-" xで削除した時はヤンクしない
-vnoremap x "_x
-nnoremap x "_x
-
 " visulaモードでインデント調整後に選択範囲を開放しない
 vnoremap > >gv
 vnoremap < <gv
