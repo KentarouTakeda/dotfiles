@@ -29,3 +29,10 @@ snippet mat_radio
 
 snippet mat_check
     <mat-checkbox>${0:TARGET}</mat-checkbox>
+
+snippet mat_datepicker
+    <mat-form-field>
+        <input matInput [matDatepicker]="picker" placeholder="${1}">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker touchUi #picker></mat-datepicker>
+    </mat-form-field>
