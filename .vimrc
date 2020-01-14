@@ -217,5 +217,6 @@ function! s:lsp_setting() abort
   nnoremap <buffer> <F1> :<C-u>LspImplementation<CR>
   nnoremap <buffer> gR :<C-u>LspRename<CR>
   nnoremap <buffer> gL :<C-u>LspDocumentDiagnostics<CR>
+  nnoremap <buffer> gA :<C-u>LspCodeAction<CR>
 endfunction
 " ------------------------------------------------------------
