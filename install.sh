@@ -31,3 +31,4 @@ ln -s dotfiles/.zprofile
 ln -s dotfiles/.zshrc
 ln -s dotfiles/.dein
 ln -s ../dotfiles/.vim/snippets .vim/snippets
+ln -s ../dotfiles/.vim/plugin .vim/plugin
