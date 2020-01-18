@@ -1,23 +1,27 @@
-#!/bin/sh -x
+#!/bin/sh
 cd ~
 
-curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
-sh ./installer.sh ~/.vim/bundles
+DEIN=~/.vim/bundles/repos/github.com/Shougo/dein.vim
 
-mkdir .vim 2> /dev/null
+if ! [ -e "$DEIN" ]; then
+    git clone --depth 1 https://github.com/Shougo/dein.vim $DEIN
+else
+    git -C $DEIN pull
+fi
 
-rm .gitconfig
-rm .gitignore_global
-rm .gvimrc
-rm .iterm2_shell_integration.zsh
-rm .npmrc
-rm .profile
-rm .tmux.conf
-rm .vimrc
-rm .zprofile
-rm .zshrc
-rm -rf .dein
-rm .vim/snippets
+rm .gitconfig 2>/dev/null
+rm .gitignore_global 2>/dev/null
+rm .gvimrc 2>/dev/null
+rm .iterm2_shell_integration.zsh 2>/dev/null
+rm .npmrc 2>/dev/null
+rm .profile 2>/dev/null
+rm .tmux.conf 2>/dev/null
+rm .vimrc 2>/dev/null
+rm .zprofile 2>/dev/null
+rm .zshrc 2>/dev/null
+rm -rf .dein 2>/dev/null
+rm .vim/snippets 2>/dev/null
+rm .vim/plugin 2>/dev/null
 
 ln -s dotfiles/.gitconfig
 ln -s dotfiles/.gitignore_global
