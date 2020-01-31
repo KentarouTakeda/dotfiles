@@ -1,3 +1,5 @@
+[include]
+	path = ~/.gitconfig.local
 [user]
 	name = 武田 憲太郎
 [core]
