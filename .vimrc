@@ -86,12 +86,14 @@ set ttyfast
 set hidden
 set shortmess+=I
 
-augroup filetypedetect
-    autocmd! BufNewFile,BufRead *.xhtml setfiletype html
-    autocmd! BufNewFile,BufRead *.sql   setfiletype sql
-    autocmd! BufNewFile,BufRead *.psql  setfiletype sql
-    autocmd! BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} setfiletype markdown
-    autocmd! BufNewFile,BufRead *.ejs set filetype=ejs
+augroup ftdetect
+    autocmd!
+    autocmd BufNewFile,BufRead *.neon set filetype=yaml
+    autocmd BufNewFile,BufRead *.xhtml set filetype=html
+    autocmd BufNewFile,BufRead *.sql   set filetype=sql
+    autocmd BufNewFile,BufRead *.psql  set filetype=sql
+    autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
+    autocmd BufNewFile,BufRead *.ejs set filetype=ejs
 augroup END
 
 augroup fileTypeIndent
