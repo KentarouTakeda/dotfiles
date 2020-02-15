@@ -89,6 +89,7 @@ set shortmess+=I
 augroup ftdetect
     autocmd!
     autocmd BufNewFile,BufRead *.neon set filetype=yaml
+    autocmd BufNewFile,BufRead *.neon.dist set filetype=yaml
     autocmd BufNewFile,BufRead *.xhtml set filetype=html
     autocmd BufNewFile,BufRead *.sql   set filetype=sql
     autocmd BufNewFile,BufRead *.psql  set filetype=sql
