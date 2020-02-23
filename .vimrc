@@ -95,6 +95,11 @@ augroup ftdetect
     autocmd BufNewFile,BufRead *.psql  set filetype=sql
     autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
     autocmd BufNewFile,BufRead *.ejs set filetype=ejs
+    au BufReadCmd *.jar call zip#Browse(expand("<amatch>"))
+    au BufReadCmd *.docx call zip#Browse(expand("<amatch>"))
+    au BufReadCmd *.xlsx call zip#Browse(expand("<amatch>"))
+    au BufReadCmd *.pptx call zip#Browse(expand("<amatch>"))
+    au BufReadCmd *.vsix call zip#Browse(expand("<amatch>"))
 augroup END
 
 augroup fileTypeIndent
