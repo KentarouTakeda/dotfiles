@@ -7,7 +7,6 @@ snippet mat_tab_group
         </mat-tab>
     </mat-tab-group>
 
-
 snippet mat_input
     <mat-form-field>
         <input matInput type="text" formControlName="${1}" placeholder="${2}" required>
@@ -43,3 +42,63 @@ snippet mat_grid
             ${0:TARGET}
         </mat-grid-tile>
     </mat-grid-list>
+
+snippet mat_accordion
+    <mat-accordion>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>${1}</mat-panel-title>
+                <mat-panel-description>${2}</mat-panel-description>
+            </mat-expansion-panel-header>
+
+            <ng-template matExpansionPanelContent>
+                ${0:TARGET}
+            </ng-template>
+        </mat-expansion-panel>
+    </mat-accordion>
+
+snippet mat_divider
+    <mat-divider></mat-divider>
+
+snippet mat_anchor
+    <a mat-button>${0:TARGET}</a>
+
+snippet mat_anchor_raised
+    <a mat-raised-button>${0:TARGET}</a>
+
+snippet mat_anchor_icon
+    <a mat-icon-button>${0:TARGET}</a>
+
+snippet mat_anchor_fab
+    <a mat-fab>${0:TARGET}</a>
+
+snippet mat_anchor_mini_fab
+    <a mat-mini-fab>${0:TARGET}</a>
+
+snippet mat_anchor_stroked
+    <a mat-stroked-button>${0:TARGET}</a>
+
+snippet mat_anchor_flat
+    <a mat-flat-button>${0:TARGET}</a>
+
+snippet mat_button
+    <button mat-button>${0:TARGET}</a>
+
+snippet mat_button_raised
+    <button mat-raised-button>${0:TARGET}</a>
+
+snippet mat_button_icon
+    <button mat-icon-button>${0:TARGET}</a>
+
+snippet mat_button_fab
+    <button mat-fab>${0:TARGET}</a>
+
+snippet mat_button_mini_fab
+    <button mat-mini-fab>${0:TARGET}</a>
+
+snippet mat_button_stroked
+    <button mat-stroked-button>${0:TARGET}</a>
+
+snippet mat_button_flat
+    <button mat-flat-button>${0:TARGET}</a>
+
