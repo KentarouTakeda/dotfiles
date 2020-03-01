@@ -57,6 +57,25 @@ snippet mat_accordion
         </mat-expansion-panel>
     </mat-accordion>
 
+snippet mat_table
+    <mat-table [dataSource]="dataSource">
+      <ng-container matColumnDef="COLUMN">
+        <mat-header-cell *matHeaderCellDef>${1}</mat-header-cell>
+        <mat-cell *matCellDef="let row">${2}</mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="['COLUMN']"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: ['COLUMN']"></mat-row>
+    </mat-table>
+
+snippet mat_select
+  <mat-form-field>
+    <mat-label>${1}</mat-label>
+    <mat-select>
+      <mat-option [value]="${2}">${0:TARGET}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
 snippet mat_divider
     <mat-divider></mat-divider>
 
