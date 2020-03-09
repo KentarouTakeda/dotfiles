@@ -210,6 +210,7 @@ augroup LspSetting
     autocmd FileType typescript call s:lsp_setting()
     autocmd FileType javascript call s:lsp_setting()
     autocmd FileType php call s:lsp_setting()
+    autocmd FileType vue call s:lsp_setting()
 augroup END
 
 function! s:lsp_setting() abort
