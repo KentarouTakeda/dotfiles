@@ -54,3 +54,6 @@ repo = 'prabirshrestha/asyncomplete-lsp.vim'
 
 [[plugins]]
 repo = 'mattn/vim-lsp-settings'
+
+[[plugins]]
+repo = 'stephpy/vim-php-cs-fixer'

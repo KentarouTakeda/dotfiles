@@ -229,3 +229,7 @@ function! s:lsp_setting() abort
   nnoremap <buffer> gA :<C-u>LspCodeAction<CR>
 endfunction
 " ------------------------------------------------------------
+
+let g:php_cs_fixer_enable_default_mapping = 1
+let g:php_cs_fixer_config_file = '.php_cs'
+autocmd BufWritePost *.php silent! call PhpCsFixerFixFile()
