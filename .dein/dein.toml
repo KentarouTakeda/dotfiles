@@ -2,9 +2,6 @@
 repo = 'mattn/emmet-vim'
 
 [[plugins]]
-repo = 'Shougo/neocomplete.vim'
-
-[[plugins]]
 repo = 'scrooloose/nerdtree'
 
 [[plugins]]
@@ -51,6 +48,18 @@ repo = 'prabirshrestha/asyncomplete.vim'
 
 [[plugins]]
 repo = 'prabirshrestha/asyncomplete-lsp.vim'
+
+[[plugins]]
+repo = 'prabirshrestha/asyncomplete-file.vim'
+
+[[plugins]]
+repo = 'prabirshrestha/asyncomplete-neosnippet.vim'
+
+[[plugins]]
+repo = 'prabirshrestha/asyncomplete-buffer.vim'
+
+[[plugins]]
+repo = 'prabirshrestha/asyncomplete-emmet.vim'
 
 [[plugins]]
 repo = 'mattn/vim-lsp-settings'

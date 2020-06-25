@@ -120,8 +120,6 @@ augroup END
 
 
 let g:acp_enableAtStartup = 0
-let g:neocomplete#enable_at_startup = 1
-let g:neocomplete#sources#syntax#min_keyword_length = 2
 
 inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
 function! s:my_cr_function()
@@ -237,3 +235,32 @@ endfunction
 let g:php_cs_fixer_enable_default_mapping = 1
 let g:php_cs_fixer_config_file = '.php_cs'
 autocmd BufWritePost *.php silent! call PhpCsFixerFixFile()
+
+au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#file#get_source_options({
+    \ 'name': 'file',
+    \ 'whitelist': ['*'],
+    \ 'priority': 10,
+    \ 'completor': function('asyncomplete#sources#file#completor')
+    \ }))
+
+call asyncomplete#register_source(asyncomplete#sources#neosnippet#get_source_options({
+    \ 'name': 'neosnippet',
+    \ 'whitelist': ['*'],
+    \ 'completor': function('asyncomplete#sources#neosnippet#completor'),
+    \ }))
+
+call asyncomplete#register_source(asyncomplete#sources#buffer#get_source_options({
+    \ 'name': 'buffer',
+    \ 'whitelist': ['*'],
+    \ 'blacklist': ['go'],
+    \ 'completor': function('asyncomplete#sources#buffer#completor'),
+    \ 'config': {
+    \    'max_buffer_size': 5000000,
+    \  },
+    \ }))
+
+au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#emmet#get_source_options({
+    \ 'name': 'emmet',
+    \ 'whitelist': ['html'],
+    \ 'completor': function('asyncomplete#sources#emmet#completor'),
+    \ }))
