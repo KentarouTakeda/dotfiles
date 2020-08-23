@@ -49,6 +49,7 @@ export PAGER=less
 export EDITOR=vim
 export PGCLIENTENCODING=utf8
 export XDG_CONFIG_HOME=$HOME/.config
+export COMPOSER_MEMORY_LIMIT=-1
 
 alias less=$PAGER
 alias zless=$PAGER
