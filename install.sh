@@ -22,6 +22,7 @@ rm .zshrc 2>/dev/null
 rm -rf .dein 2>/dev/null
 rm .vim/snippets 2>/dev/null
 rm .vim/plugin 2>/dev/null
+rm .ssh/config 2>/dev/null
 
 ln -s dotfiles/.gitconfig
 ln -s dotfiles/.gitignore_global
@@ -36,3 +37,6 @@ ln -s dotfiles/.zshrc
 ln -s dotfiles/.dein
 ln -s ../dotfiles/.vim/snippets .vim/snippets
 ln -s ../dotfiles/.vim/plugin .vim/plugin
+ln -s ../dotfiles/.ssh/config .ssh/config
+
+chmod -R go-rwx .ssh
