@@ -1,4 +1,5 @@
 #!/bin/sh
+umask 022
 cd ~
 
 DEIN=~/.vim/bundles/repos/github.com/Shougo/dein.vim
