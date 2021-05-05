@@ -1,5 +1,6 @@
 #!/bin/sh
 umask 022
+chmod -R go-w `dirname $0`
 cd ~
 
 DEIN=~/.vim/bundles/repos/github.com/Shougo/dein.vim
