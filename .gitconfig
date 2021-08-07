@@ -4,6 +4,7 @@
 	name = 武田 憲太郎
 [core]
 	excludesfile = ~/.gitignore_global
+	ignorecase = false
 [diff]
 	tool = vimdiff
 [difftool]
