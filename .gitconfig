@@ -12,6 +12,6 @@
 	tool = vimdiff
 	conflictStyle = diff3
 [push]
-	default = simple
+	default = current
 [pull]
 	ff = only
