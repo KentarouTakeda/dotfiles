@@ -64,7 +64,7 @@ umask 0002
 [ -f ~/.zshrc.mine ] && source ~/.zshrc.mine
 [ -f ~/.zshrc.aws  ] && source ~/.zshrc.aws
 
-if [[ ${OSTYPE} =~ linux ]]; then
+if [[ ${OSTYPE} =~ linux ]] && test -z ${WSL_DISTRO_NAME} ; then
 	if [ -z $TMUX ]; then
 		if $(tmux has-session 2>/dev/null); then
 			exec tmux attach
