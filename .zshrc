@@ -30,7 +30,6 @@ zstyle ':completion:*' list-colors 'di=34' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'c
 if [ "$TERM" = "kterm" ] || [ "$TERM" = "xterm" ]|| [ "$TERM" = "screen" ] || [ "$TERM" = "xterm-256color" ]; then 
 precmd() { 
 TITLE=`print -P $USER@%m` 
-#echo -n "\e]2;$TITLE\a" 
 echo -n "\ek{$TITLE}\e\\" 
 } 
 fi 
@@ -45,7 +44,7 @@ RPROMPT="%{${fg[yellow]}%}[%~]%{${reset_color}%}"
 export LANG=ja_JP.UTF-8
 export LANGVAR=ja_JP.UTF-8
 export LC_ALL=ja_JP.UTF-8
-export PAGER=less
+export PAGER=more
 export EDITOR=vim
 export PGCLIENTENCODING=utf8
 export XDG_CONFIG_HOME=$HOME/.config
@@ -54,15 +53,16 @@ export COMPOSER_MEMORY_LIMIT=-1
 alias less=$PAGER
 alias zless=$PAGER
 alias grep='grep --color=auto'
-alias la='ls -alF --color=auto'
 alias ..='cd ..'
 alias ~='cd ~'
+alias la='ls --color=auto -alF'
+alias ll='ls --color=auto -lF'
+alias ls='ls --color=auto -F'
 
 umask 0002
 
 [ -f ~/.zshrc.mine ] && source ~/.zshrc.mine
 [ -f ~/.zshrc.aws  ] && source ~/.zshrc.aws
-#[ ${HOME} != "/Users/takeda" ] && screen -xRU
 
 if [[ ${OSTYPE} =~ linux ]]; then
 	if [ -z $TMUX ]; then
@@ -99,6 +99,4 @@ mkdir -p   $HOME/tmp/vim 2> /dev/null
 chmod 0700 $HOME/tmp/vim 2> /dev/null
 touch      $HOME/tmp/vim
 
-
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
