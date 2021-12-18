@@ -44,14 +44,13 @@ RPROMPT="%{${fg[yellow]}%}[%~]%{${reset_color}%}"
 export LANG=ja_JP.UTF-8
 export LANGVAR=ja_JP.UTF-8
 export LC_ALL=ja_JP.UTF-8
-export PAGER=more
+export PAGER=less
 export EDITOR=vim
 export PGCLIENTENCODING=utf8
 export XDG_CONFIG_HOME=$HOME/.config
 export COMPOSER_MEMORY_LIMIT=-1
+export AWS_PAGER=""
 
-alias less=$PAGER
-alias zless=$PAGER
 alias grep='grep --color=auto'
 alias ..='cd ..'
 alias ~='cd ~'
