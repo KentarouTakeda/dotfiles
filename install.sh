@@ -11,6 +11,7 @@ else
     git -C $DEIN pull
 fi
 
+rm .curlrc 2>/dev/null
 rm .gitconfig 2>/dev/null
 rm .gitignore_global 2>/dev/null
 rm .gvimrc 2>/dev/null
@@ -26,6 +27,7 @@ rm .vim/snippets 2>/dev/null
 rm .vim/plugin 2>/dev/null
 rm .ssh/config 2>/dev/null
 
+ln -s dotfiles/.curlrc
 ln -s dotfiles/.gitconfig
 ln -s dotfiles/.gitignore_global
 ln -s dotfiles/.gvimrc
