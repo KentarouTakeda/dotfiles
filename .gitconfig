@@ -5,6 +5,7 @@
 [core]
 	excludesfile = ~/.gitignore_global
 	ignorecase = false
+	quotepath = false
 [diff]
 	tool = vimdiff
 [difftool]
