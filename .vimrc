@@ -213,6 +213,7 @@ augroup LspSetting
     autocmd FileType vue call s:lsp_setting()
     autocmd FileType cs call s:lsp_setting()
     autocmd FileType ruby call s:lsp_setting()
+    autocmd FileType json call s:lsp_setting()
 augroup END
 
 function! s:lsp_setting() abort
