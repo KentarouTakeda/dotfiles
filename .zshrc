@@ -62,6 +62,7 @@ umask 0002
 
 [ -f ~/.zshrc.mine ] && source ~/.zshrc.mine
 [ -f ~/.zshrc.aws  ] && source ~/.zshrc.aws
+[ -f ~/.zshrc.npm  ] && source ~/.zshrc.npm
 
 if [[ ${OSTYPE} =~ linux ]] && test -z ${WSL_DISTRO_NAME} ; then
 	if [ -z $TMUX ]; then

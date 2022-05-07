@@ -11,6 +11,10 @@ else
     git -C $DEIN pull
 fi
 
+if (type npm > /dev/null 2>&1); then
+    npm completion > ~/.zshrc.npm
+fi
+
 rm .curlrc 2>/dev/null
 rm .gitconfig 2>/dev/null
 rm .gitignore_global 2>/dev/null
