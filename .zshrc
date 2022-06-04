@@ -47,6 +47,7 @@ export LC_ALL=ja_JP.UTF-8
 export PAGER=less
 export EDITOR=vim
 export PGCLIENTENCODING=utf8
+export PSQL_PAGER=""
 export XDG_CONFIG_HOME=$HOME/.config
 export COMPOSER_MEMORY_LIMIT=-1
 export AWS_PAGER=""
