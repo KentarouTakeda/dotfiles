@@ -65,6 +65,7 @@ set ambiwidth=single
 set nobomb
 set title
 set t_Co=256
+set termguicolors
 set belloff=all
 set undofile
 set undodir=$HOME/tmp/vim
@@ -199,7 +200,7 @@ endif
 
 set background=dark
 syntax on
-colorscheme hybrid
+colorscheme tender
 
 " ------------------------------------------------------------
 let g:lsp_settings_servers_dir = $HOME . "/tmp/vim-lsp"

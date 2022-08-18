@@ -11,7 +11,7 @@ repo = 'tomtom/tcomment_vim'
 repo = 'editorconfig/editorconfig-vim'
 
 [[plugins]]
-repo = 'w0ng/vim-hybrid'
+repo = 'jacoborus/tender.vim'
 
 [[plugins]]
 repo = 'chase/vim-ansible-yaml'
