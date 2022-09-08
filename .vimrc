@@ -65,7 +65,6 @@ set ambiwidth=single
 set nobomb
 set title
 set t_Co=256
-set termguicolors
 set belloff=all
 set undofile
 set undodir=$HOME/tmp/vim
