@@ -66,3 +66,6 @@ repo = 'mattn/vim-lsp-settings'
 
 [[plugins]]
 repo = 'stephpy/vim-php-cs-fixer'
+
+[[plugins]]
+repo = 'chrisbra/csv.vim'
