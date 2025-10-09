@@ -1,2 +1,2 @@
 set background=dark
-set guifont=Ricty\ Diminished:h16
+set guifont=HackGen\ Console\ NF:h16
