@@ -22,7 +22,7 @@
 [advice]
 	skippedCherryPicks = false
 [credential]
-    helper = store --file ~/.git-credentials
+	helper = osxkeychain
 [include]
 	path = ~/.gitconfig.local
 [filter "lfs"]
