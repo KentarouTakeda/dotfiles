@@ -30,7 +30,7 @@ rm -rf .dein 2>/dev/null
 rm .vim/snippets 2>/dev/null
 rm .vim/plugin 2>/dev/null
 rm .ssh/config 2>/dev/null
-rm .claude/settings.json
+rm .claude/settings.json 2>/dev/null
 
 ln -s dotfiles/.curlrc
 ln -s dotfiles/.gitconfig
@@ -47,6 +47,6 @@ ln -s dotfiles/.dein
 ln -s ../dotfiles/.vim/snippets .vim/snippets
 ln -s ../dotfiles/.vim/plugin .vim/plugin
 ln -s ../dotfiles/.ssh/config .ssh/config
-ln -s ../dotfiles/.claude/settings.json .claude/settings.json
+cp dotfiles/.claude/settings.json .claude/settings.json
 
 chmod -R go-rwx .ssh
