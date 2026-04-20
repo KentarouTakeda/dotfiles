@@ -1,6 +1,3 @@
-autoload -U compinit
-compinit
-
 setopt COMPLETE_IN_WORD
 setopt NOBGNICE
 setopt NO_BEEP
@@ -99,5 +96,14 @@ chmod 3777 $HOME/tmp     2> /dev/null
 mkdir -p   $HOME/tmp/vim 2> /dev/null
 chmod 0700 $HOME/tmp/vim 2> /dev/null
 touch      $HOME/tmp/vim
+
+# ツールが新規インストールされた際はキャッシュを使わず補完リスト再構築
+autoload -Uz compinit
+local refresh=0
+for dir in $fpath; do [[ $dir -nt ~/.zcompdump ]] && { refresh=1; break }; done
+(( refresh )) && compinit || compinit -C
+
+autoload bashcompinit && bashcompinit
+(( $+commands[aws_completer] )) && complete -C aws_completer aws
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
