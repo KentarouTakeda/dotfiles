@@ -19,7 +19,7 @@ setopt HIST_IGNORE_DUPS
 
 MAILCHECK=0
 
-export PATH=/usr/local/pgsql/bin:$HOME/sbin:$HOME/local/bin:$HOME/bin:$HOME/local/npm/bin:$HOME/.config/composer/vendor/bin:$PATH:/usr/local/bin
+export PATH=/usr/local/pgsql/bin:$HOME/sbin:$HOME/.local/bin:$HOME/local/bin:$HOME/bin:$HOME/local/npm/bin:$HOME/.config/composer/vendor/bin:$PATH:/usr/local/bin
 export LSCOLORS=exfxcxdxbxegedabagacad
 export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
 zstyle ':completion:*' list-colors 'di=34' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
