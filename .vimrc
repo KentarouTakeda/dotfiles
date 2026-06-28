@@ -8,7 +8,6 @@ augroup END
 filetype plugin indent on
 
 let mapleader = "\<Space>"
-nnoremap <Leader>o :CtrlP<CR>
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>q :q<CR>
 nnoremap <Leader>d :bd<CR>
@@ -118,8 +117,6 @@ augroup vimrc
     autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 augroup END
 
-
-let g:acp_enableAtStartup = 0
 
 inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
 function! s:my_cr_function()
@@ -232,7 +229,6 @@ endfunction
 " ------------------------------------------------------------
 
 let g:php_cs_fixer_enable_default_mapping = 1
-let g:php_cs_fixer_config_file = '.php_cs'
 autocmd BufWritePost *.php silent! call PhpCsFixerFixFile()
 
 au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#file#get_source_options({

@@ -21,7 +21,6 @@ rm .gitignore_global 2>/dev/null
 rm .gvimrc 2>/dev/null
 rm .iterm2_shell_integration.zsh 2>/dev/null
 rm .npmrc 2>/dev/null
-rm .profile 2>/dev/null
 rm .tmux.conf 2>/dev/null
 rm .vimrc 2>/dev/null
 rm .zprofile 2>/dev/null
@@ -38,7 +37,6 @@ ln -s dotfiles/.gitignore_global
 ln -s dotfiles/.gvimrc
 ln -s dotfiles/.iterm2_shell_integration.zsh
 ln -s dotfiles/.npmrc
-ln -s dotfiles/.profile
 ln -s dotfiles/.tmux.conf
 ln -s dotfiles/.vimrc
 ln -s dotfiles/.zprofile

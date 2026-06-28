@@ -38,7 +38,6 @@ PROMPT2="%{${fg[yellow]}%}%_> %{${reset_color}%}"
 SPROMPT="%{${fg[red]}%}correct: %R -> %r [nyae]? %{${reset_color}%}"
 
 export LANG=ja_JP.UTF-8
-export LANGVAR=ja_JP.UTF-8
 export LC_ALL=ja_JP.UTF-8
 export PAGER=less
 export EDITOR=vim
