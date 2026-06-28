@@ -53,12 +53,24 @@ alias ~='cd ~'
 alias la='ls --color=auto -alF'
 alias ll='ls --color=auto -lF'
 alias ls='ls --color=auto -F'
+alias l.='ls --color=auto -dF .*'
 
 umask 0002
 
 [ -f ~/.zshrc.mine ] && source ~/.zshrc.mine
 [ -f ~/.zshrc.aws  ] && source ~/.zshrc.aws
 [ -f ~/.zshrc.npm  ] && source ~/.zshrc.npm
+
+# GNU 版コマンドを 'g' プレフィックスなしで使う(macOS+Homebrew 時のみ。Linux/未導入は no-op)
+if [[ -n ${HOMEBREW_PREFIX} ]]; then
+	for _gnu in coreutils findutils gnu-sed grep gnu-tar gawk; do
+		_gnubin=${HOMEBREW_PREFIX}/opt/${_gnu}/libexec/gnubin
+		[[ -d ${_gnubin} ]] || continue
+		path=(${_gnubin} $path)
+		export MANPATH="${HOMEBREW_PREFIX}/opt/${_gnu}/libexec/gnuman:${MANPATH}"
+	done
+	unset _gnu _gnubin
+fi
 
 if [[ ${OSTYPE} =~ linux ]] && test -z ${WSL_DISTRO_NAME} ; then
 	if [ -z $TMUX ]; then
