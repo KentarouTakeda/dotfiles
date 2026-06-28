@@ -72,6 +72,11 @@ if [[ -n ${HOMEBREW_PREFIX} ]]; then
 	unset _gnu _gnubin
 fi
 
+# Homebrew python の無印リンク(python→python3, pip→pip3 等。macOS+Homebrew 時のみ。Linux/未導入は no-op)
+if [[ -n ${HOMEBREW_PREFIX} && -d ${HOMEBREW_PREFIX}/opt/python3/libexec/bin ]]; then
+	path=(${HOMEBREW_PREFIX}/opt/python3/libexec/bin $path)
+fi
+
 if [[ ${OSTYPE} =~ linux ]] && test -z ${WSL_DISTRO_NAME} ; then
 	if [ -z $TMUX ]; then
 		if $(tmux has-session 2>/dev/null); then
