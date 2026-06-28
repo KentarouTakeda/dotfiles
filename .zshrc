@@ -33,10 +33,9 @@ fi
 
 autoload colors
 colors
-PROMPT="%{${fg[yellow]}%}[%n@%m] %(!.#.$) %{${reset_color}%}"
+PROMPT="%{${fg[yellow]}%}%n@%m %1~%{${reset_color}%} %(!.#.$) "
 PROMPT2="%{${fg[yellow]}%}%_> %{${reset_color}%}"
 SPROMPT="%{${fg[red]}%}correct: %R -> %r [nyae]? %{${reset_color}%}"
-RPROMPT="%{${fg[yellow]}%}[%~]%{${reset_color}%}"
 
 export LANG=ja_JP.UTF-8
 export LANGVAR=ja_JP.UTF-8
@@ -73,23 +72,6 @@ if [[ ${OSTYPE} =~ linux ]] && test -z ${WSL_DISTRO_NAME} ; then
 fi
 
 bindkey -e
-
-function do_enter() {
-	if [ -n "$BUFFER" ]; then
-		zle accept-line
-		return 0
-	fi
-	echo
-	ls -F
-	zle reset-prompt
-	return 0
-}
-zle -N do_enter
-bindkey '^m' do_enter
-
-function chpwd() {
-	ls
-}
 
 mkdir -p   $HOME/tmp     2> /dev/null
 chmod 3777 $HOME/tmp     2> /dev/null
